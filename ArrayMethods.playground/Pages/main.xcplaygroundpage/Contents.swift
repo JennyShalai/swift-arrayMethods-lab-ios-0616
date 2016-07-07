@@ -16,10 +16,11 @@
  */
 // write your code here
 
+var daysOfTheWeek: [String] = ["Monday", "Tusday", "Wednsday", "Thursday", "Friday"]
 
-
-
-
+for day in daysOfTheWeek {
+    print(day)
+}
 
 
 /*: question2
@@ -27,92 +28,80 @@
  */
 // write your code here
 
+let numDaysOfTheWeek: [String] = ["Monday", "Tusday", "Wednsday", "Thursday", "Friday"]
 
-
-
-
-
+for (index, day) in numDaysOfTheWeek.enumerate() {
+    print("\(index + 1). \(day)")
+}
 
 /*: question3
  ### 3. Create an empty array of strings called 'emptyArray' and check to see if it's empty, printing appropriate messages.
  */
 // write your code here
 
-
-
-
-
-
-
+let emptyArray: [String] = []
+print(emptyArray)
 
 /*: question4
  ### 4.  Create an empty array of strings called 'reverseEmptyArray' and check to see if it's empty, printing appropriate messages. Use reversed logic from question 3.
  */
 // write your code here
 
-
-
-
-
-
-
-
+let reverseEmptyArray: [String] = []
+if reverseEmptyArray.isEmpty {
+    print(reverseEmptyArray)
+}
 
 /*: question5
  ### 5. Find out the size of the 'daysOfTheWeek' array created earlier, and print it to the screen.
  */
 // write your code here
 
-
-
-
-
-
-
+print(daysOfTheWeek.count)
 
 /*: question6
  ### 6. Add the two days of the weekend to the 'daysOfTheWeek array and create an enumerated loop to print the values.
  */
 // write your code here
 
-
-
-
-
-
+daysOfTheWeek.appendContentsOf(["Saturday", "Sunday"])
+for day in daysOfTheWeek {
+    print(day)
+}
 
 /*: question7
  ### 7. Some people start the week on a Sunday. Remove Sunday from the end of the 'daysOfTheWeek' array and then re-add it to the beginning of the array.
  */
 // write your code here
 
-
-
-
-
-
-
+let lastDayOfTheWeek = daysOfTheWeek[daysOfTheWeek.count - 1]
+daysOfTheWeek.removeLast()
+daysOfTheWeek.insert(lastDayOfTheWeek, atIndex: 0)
 
 /*: question8
  ### 8. Loop through the 'daysofTheWeek' array and change each value to lower case.
  */
 // write your code here
 
-
-
-
-
-
-
+var foo: [String] = []
+for day in daysOfTheWeek {
+    foo.append(day.lowercaseString)
+}
+daysOfTheWeek.removeAll()
+daysOfTheWeek.appendContentsOf(foo)
+print(daysOfTheWeek)
 
 /*: question9
  ### 9. Check to see if the size of the array is greater than 5, i.e. contains the days of the weekend. If so, remove the days of the weekend from the array.
  */
 // write your code here
 
+if daysOfTheWeek.count > 5 {
+    
+    daysOfTheWeek.removeAtIndex(daysOfTheWeek.indexOf("saturday")!)
+    daysOfTheWeek.removeAtIndex(daysOfTheWeek.indexOf("sunday")!)
+}
 
-
-
-
+print(daysOfTheWeek)
 
 //: Check here on the solution branch for a link to the solutions
